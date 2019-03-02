@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Title from '../Title';
-import List from '../List';
+import CocktailsList from '../CocktailsList';
 import './styles.css';
 
 class App extends Component {
@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Title copy="IBA Cocktails List"/>
-        <List />
+        <CocktailsList />
       </div>
     );
   }
