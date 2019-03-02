@@ -16,7 +16,11 @@ class CocktailsList extends Component {
     const url = "https://raw.githubusercontent.com/watkinshughes/iba-cocktails/master/recipes.json";
     axios.get(url).then(response => {
       this.setState({
-        data: response.data,
+        data: response.data.sort(function(a, b){
+          if(a.name < b.name) { return -1; }
+          if(a.name > b.name) { return 1; }
+          return 0;
+      }),
         loading: false
       });
     });
