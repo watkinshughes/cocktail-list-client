@@ -1,0 +1,15 @@
+.Cocktail {
+    margin: 20px 0;
+    padding: 20px;
+    background: #fff;
+}
+
+.Cocktail h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.Cocktail h2 {
+    font-size: 1em;
+    font-weight: bold;
+}
