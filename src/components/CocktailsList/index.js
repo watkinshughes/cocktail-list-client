@@ -44,7 +44,7 @@ class CocktailsList extends Component {
         <p>Loading...</p>
       )
     } else {
-      return <section className="Cocktail-List">
+      return <section className="Cocktails-List">
         { this.buildRecursiveList(this.state.data)}
       </section>
     }

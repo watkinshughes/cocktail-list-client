@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Title copy="IBA Cocktails List"/>
+        <Title copy="Cocktails List"/>
         <CocktailsList />
       </div>
     );

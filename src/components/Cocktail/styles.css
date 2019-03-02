@@ -13,3 +13,18 @@
     font-size: 1em;
     font-weight: bold;
 }
+
+.Cocktail button {
+    -webkit-appearance: none;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.Cocktail-info {
+    display: none;
+}
+
+.Cocktail-info.expanded {
+    display: block;
+}

@@ -2,33 +2,51 @@ import React, {Component} from 'react';
 import './styles.css';
 
 class Cocktail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: false
+  };
+    this.toggleExpanded = this.toggleExpanded.bind(this);
+  }
+  
+  toggleExpanded() {
+    const currentState = this.state.expanded;
+    this.setState({
+      expanded: !currentState
+    });
+  };
 
   render() {
-    return <article class="Cocktail">
-        <h1>
+    return <article className="Cocktail">
+        <button onClick={this.toggleExpanded}>
+          <h1>
             { this.props.info.name }
-        </h1>
-        <h2>
-          { this.props.info.category }
-        </h2>
-        <ul>{this.props.info.ingredients.map(ingredient => {
-          if (ingredient.special) {
-            return <li>{ingredient.special }</li>
-          } else {
-            return (
-              <li>
-                { ingredient.amount } { ingredient.unit } - { ingredient.ingredient }
-              </li>
-            )
-          }
-        })}
-        </ul>
-        <p>
-          { this.props.info.preparation }
-        </p>
-        <p>
-          { this.props.info.garnish }
-        </p>
+          </h1>
+        </button>
+        <div className={ `Cocktail-info ${ this.state.expanded ? 'expanded': '' }` }>
+          <h2>
+            { this.props.info.category }
+          </h2>
+          <ul>{this.props.info.ingredients.map((ingredient, index) => {
+            if (ingredient.special) {
+              return <li key={ index }>{ingredient.special }</li>
+            } else {
+              return (
+                <li key={ index }>
+                  { ingredient.amount } { ingredient.unit } - { ingredient.ingredient }
+                </li>
+              )
+            }
+          })}
+          </ul>
+          <p>
+            { this.props.info.preparation }
+          </p>
+          <p>
+            { this.props.info.garnish }
+          </p>
+        </div>
       </article>
   }
 }
