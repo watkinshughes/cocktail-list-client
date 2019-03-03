@@ -13,9 +13,10 @@ class CocktailsList extends Component {
     };
     this.sortData = this.sortData.bind(this);
     this.fetchData = this.fetchData.bind(this);
-    this.buildRecursiveList = this.buildRecursiveList.bind(this);
+    this.buildCocktailsList = this.buildCocktailsList.bind(this);
     this.filterList = this.filterList.bind(this);
   }
+  
   sortData(data) {
     return data.sort(function(a, b){
       if(a.name < b.name) { return -1; }
@@ -23,8 +24,8 @@ class CocktailsList extends Component {
       return 0;
     });
   }
+  
   fetchData() {
-    // const url = "https://raw.githubusercontent.com/watkinshughes/iba-cocktails/master/recipes.json";
     const url = "https://cocktails-list-api.herokuapp.com/cocktails";
     axios.get(url).then(response => {
       this.setState({
@@ -35,18 +36,12 @@ class CocktailsList extends Component {
     });
   }
 
-  buildRecursiveList(data) {
-    // const children = (items) => {
-    //   if (items) {
-    //     return <ul className="Child">{ this.buildRecursiveList(items) }</ul>
-    //   }
-    // }
+  buildCocktailsList(data) {
     return data.map((node) => {
       return <Cocktail key={ node.name } info={ node } >
         { node.children }
       </Cocktail>
-    })
-    
+    })  
   }
   
   filterList(event) {
@@ -77,7 +72,7 @@ class CocktailsList extends Component {
             <input type="text" className="Search" placeholder="Filter by name" onChange={this.filterList} />
           </fieldset>
         </form>
-        { this.buildRecursiveList(this.state.data)}
+        { this.buildCocktailsList(this.state.data)}
       </section>
       )}
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Title from '../Title';
 import CocktailsList from '../CocktailsList';
 import CocktailDetails from '../CocktailDetails';
@@ -10,11 +10,15 @@ class App extends Component {
     return (
       
       <div className="App">
-      <Title copy="Cocktails List"/>
       <Router>
           <div> 
+            <Link to="/">
+              <Title copy="Cocktails List"/>
+            </Link>
             <Route exact path="/" component={ CocktailsList } />
-            <Route path="/about" component={ CocktailDetails } />
+            <Route path="/:id" component={ CocktailDetails } />
+    
+
           </div>
         </Router>
       </div>

@@ -1,1 +1,24 @@
+.App h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
+.App h2 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.App a {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.App .display-linebreak {
+    white-space: pre-line;
+}
