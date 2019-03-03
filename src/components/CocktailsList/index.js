@@ -73,7 +73,7 @@ class CocktailsList extends Component {
       <section className="Cocktails-list">
       <form>
         <fieldset>
-          <input type="text" className="Search" placeholder="Search" onChange={this.filterList} />
+          <input type="text" className="Search" placeholder="Filter by name" onChange={this.filterList} />
         </fieldset>
       </form>
         { this.buildRecursiveList(this.state.data)}
