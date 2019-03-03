@@ -13,7 +13,7 @@ class App extends Component {
       <Router>
           <div> 
             <Link to="/">
-              <Title copy="Cocktails List"/>
+              <Title copy="Cocktail List"/>
             </Link>
             <Route exact path="/" component={ CocktailsList } />
             <Route path="/:id" component={ CocktailDetails } />
