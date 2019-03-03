@@ -36,14 +36,14 @@ class CocktailsList extends Component {
   }
 
   buildRecursiveList(data) {
-    const children = (items) => {
-      if (items) {
-        return <ul className="Child">{ this.buildRecursiveList(items) }</ul>
-      }
-    }
+    // const children = (items) => {
+    //   if (items) {
+    //     return <ul className="Child">{ this.buildRecursiveList(items) }</ul>
+    //   }
+    // }
     return data.map((node) => {
       return <Cocktail key={ node.name } info={ node } >
-        { children(node.children) }
+        { node.children }
       </Cocktail>
     })
     
@@ -72,11 +72,11 @@ class CocktailsList extends Component {
     } else {
       return (
       <section className="Cocktails-list">
-      <form>
-        <fieldset>
-          <input type="text" className="Search" placeholder="Filter by name" onChange={this.filterList} />
-        </fieldset>
-      </form>
+        <form>
+          <fieldset>
+            <input type="text" className="Search" placeholder="Filter by name" onChange={this.filterList} />
+          </fieldset>
+        </form>
         { this.buildRecursiveList(this.state.data)}
       </section>
       )}
