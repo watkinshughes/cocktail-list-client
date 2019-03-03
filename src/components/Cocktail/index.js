@@ -25,7 +25,7 @@ class Cocktail extends Component {
           </h1>
         </button>
         <div className={ `Cocktail-info ${ this.state.expanded ? 'expanded': '' }` }>
-          <ul>{this.props.info.ingredients.map((ingredient, index) => {
+          {/* <ul>{this.props.info.ingredients.map((ingredient, index) => {
             if (ingredient.special) {
               return <li key={ index }>{ingredient.special }</li>
             } else {
@@ -36,7 +36,10 @@ class Cocktail extends Component {
               )
             }
           })}
-          </ul>
+          </ul> */}
+          <div className="display-linebreak">
+            { this.props.info.ingredients }
+          </div>
           <p>
             { this.props.info.preparation }
           </p>

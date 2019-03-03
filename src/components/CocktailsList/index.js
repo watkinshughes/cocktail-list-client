@@ -24,7 +24,7 @@ class CocktailsList extends Component {
     });
   }
   fetchData() {
-    const url = "https://raw.githubusercontent.com/watkinshughes/iba-cocktails/master/recipes.json";
+    const url = "https://cocktails-list-api.herokuapp.com/cocktails";
     axios.get(url).then(response => {
       this.setState({
         data: this.sortData(response.data),

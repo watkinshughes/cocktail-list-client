@@ -1,7 +1,7 @@
 .Cocktail {
-    margin: 20px 0;
-    padding: 20px;
-    background: #fff;
+  margin: 20px 0;
+  padding: 20px;
+  background: #fff;
 }
 
 .Cocktail h1 {
@@ -30,4 +30,8 @@
 
 .Cocktail-info.expanded {
     display: block;
+}
+
+.Cocktail-info .display-linebreak {
+    white-space: pre-line;
 }
