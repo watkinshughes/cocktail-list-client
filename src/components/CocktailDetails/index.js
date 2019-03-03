@@ -14,7 +14,7 @@ class CocktailDetails extends Component {
   }
   
   fetchData() {
-    const url = `https://cocktails-list-api.herokuapp.com/cocktails/${this.props.match.params.id}`;
+    const url = `https://cocktail-list-api.herokuapp.com/cocktails/${this.props.match.params.id}`;
     axios.get(url).then(response => {
       this.setState({
         data: response.data,
