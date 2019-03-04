@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Cocktail from "../Cocktail";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 class CocktailList extends Component {
   state = {
@@ -66,7 +66,7 @@ class CocktailList extends Component {
       return <p>Loading...</p>;
     } else {
       return (
-        <section className="Cocktail-list">
+        <section className={styles.list}>
           <form>
             <fieldset>
               <input
