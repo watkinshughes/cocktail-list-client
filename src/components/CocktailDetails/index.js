@@ -4,16 +4,13 @@ import axios from "axios";
 import "./styles.css";
 
 class CocktailDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {},
-      loading: true
-    };
-    this.fetchData = this.fetchData.bind(this);
+  state = {
+    data: {},
+    loading: true
   }
+    
 
-  fetchData() {
+  fetchData = () => {
     const url = `https://cocktail-list-api.herokuapp.com/cocktails/${
       this.props.match.params.id
     }`;

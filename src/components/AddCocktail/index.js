@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import './styles.css'
+import "./styles.css";
 
 class AddCocktail extends Component {
   state = {
@@ -10,7 +10,7 @@ class AddCocktail extends Component {
     garnish: "",
     preparation: "",
     ingredients: ""
-  };
+  }
 
   handleNameChange = event => {
     this.setState({
@@ -62,7 +62,7 @@ class AddCocktail extends Component {
       })
       .then(response => {
         console.log(response.data);
-        this.props.history.push("/")
+        this.props.history.push("/");
       })
       .catch(error => {
         console.log("An error occurred:", error);
@@ -75,33 +75,47 @@ class AddCocktail extends Component {
         <form className="AddCocktail" onSubmit={this.handleSubmit}>
           <label>
             <div className="visually-hidden">Name</div>
-            <input type="text" name="name" placeholder="Name" onChange={this.handleNameChange} />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              onChange={this.handleNameChange}
+            />
           </label>
           <label>
             <div className="visually-hidden">Category</div>
-              <select name="category" onChange={this.handleCategoryChange}>
-                <option value="">Select Category</option>
-                <option value="Before Dinner Cocktail">Before Dinner Cocktail</option>
-                <option value="After Dinner Cocktail">After Dinner Cocktail</option>
-                <option value="All Day Cocktail">All Day Cocktail</option>
-                <option value="Longdrink">Longdrink</option>
-              </select>
+            <select name="category" onChange={this.handleCategoryChange}>
+              <option value="">Select Category</option>
+              <option value="Before Dinner Cocktail">
+                Before Dinner Cocktail
+              </option>
+              <option value="After Dinner Cocktail">
+                After Dinner Cocktail
+              </option>
+              <option value="All Day Cocktail">All Day Cocktail</option>
+              <option value="Longdrink">Longdrink</option>
+            </select>
           </label>
           <label>
             <div className="visually-hidden">Glass</div>
             <select name="glass" onChange={this.handleGlassChange}>
-                <option value="">Select Glass</option>
-                <option value="martini">Martini</option>
-                <option value="old-fashioned">Old-fashioned</option>
-                <option value="collins">Collins</option>
-                <option value="highball">Highball</option>
-                <option value="champagne">Champagne</option>
-                <option value="margarita">Margarita</option>
-              </select>
+              <option value="">Select Glass</option>
+              <option value="martini">Martini</option>
+              <option value="old-fashioned">Old-fashioned</option>
+              <option value="collins">Collins</option>
+              <option value="highball">Highball</option>
+              <option value="champagne">Champagne</option>
+              <option value="margarita">Margarita</option>
+            </select>
           </label>
           <label>
             <div className="visually-hidden">Garnish</div>
-            <input type="text" placeholder="Garnish" name="granish" onChange={this.handleGarnishChange} />
+            <input
+              type="text"
+              placeholder="Garnish"
+              name="granish"
+              onChange={this.handleGarnishChange}
+            />
           </label>
           <label>
             <div className="visually-hidden">Preparation</div>

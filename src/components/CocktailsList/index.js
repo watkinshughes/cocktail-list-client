@@ -4,20 +4,13 @@ import Cocktail from "../Cocktail";
 import "./styles.css";
 
 class CocktailsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      initialData: [],
-      data: [],
-      loading: true
-    };
-    this.sortData = this.sortData.bind(this);
-    this.fetchData = this.fetchData.bind(this);
-    this.buildCocktailsList = this.buildCocktailsList.bind(this);
-    this.filterList = this.filterList.bind(this);
+  state = {
+    initialData: [],
+    data: [],
+    loading: true
   }
 
-  sortData(data) {
+  sortData = data => {
     return data.sort(function(a, b) {
       if (a.name < b.name) {
         return -1;
@@ -29,7 +22,7 @@ class CocktailsList extends Component {
     });
   }
 
-  fetchData() {
+  fetchData = () => {
     const url = "https://cocktail-list-api.herokuapp.com/cocktails";
     axios.get(url).then(response => {
       this.setState({
@@ -40,7 +33,7 @@ class CocktailsList extends Component {
     });
   }
 
-  buildCocktailsList(data) {
+  buildCocktailsList = data => {
     return data.map(node => {
       return (
         <Cocktail key={node.name} info={node}>
@@ -50,7 +43,7 @@ class CocktailsList extends Component {
     });
   }
 
-  filterList(event) {
+  filterList = event => {
     let updatedList = this.state.initialData;
     updatedList = updatedList.filter(
       node =>
