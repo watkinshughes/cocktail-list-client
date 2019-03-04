@@ -12,14 +12,39 @@ class AddCocktail extends Component {
     ingredients: ""
   };
 
-  handleChange = event => {
+  handleNameChange = event => {
     this.setState({
-      name: event.target.name,
-      glass: event.target.name,
-      category: event.target.name,
-      garnish: event.target.name,
-      preparation: event.target.name,
-      ingredients: event.target.name
+      name: event.target.value
+    });
+  };
+
+  handleGlassChange = event => {
+    this.setState({
+      glass: event.target.value
+    });
+  };
+
+  handleCategoryChange = event => {
+    this.setState({
+      category: event.target.value
+    });
+  };
+
+  handleGarnishChange = event => {
+    this.setState({
+      garnish: event.target.value
+    });
+  };
+
+  handlePreparationChange = event => {
+    this.setState({
+      preparation: event.target.value
+    });
+  };
+
+  handleIngredientsChange = event => {
+    this.setState({
+      ingredients: event.target.value
     });
   };
 
@@ -37,6 +62,7 @@ class AddCocktail extends Component {
       })
       .then(response => {
         console.log(response.data);
+        this.props.history.push("/")
       })
       .catch(error => {
         console.log("An error occurred:", error);
@@ -49,11 +75,11 @@ class AddCocktail extends Component {
         <form className="AddCocktail" onSubmit={this.handleSubmit}>
           <label>
             <div className="visually-hidden">Name</div>
-            <input type="text" name="name" placeholder="Name" onChange={this.handleChange} />
+            <input type="text" name="name" placeholder="Name" onChange={this.handleNameChange} />
           </label>
           <label>
             <div className="visually-hidden">Category</div>
-              <select name="category" onChange={this.handleChange}>
+              <select name="category" onChange={this.handleCategoryChange}>
                 <option value="">Select Category</option>
                 <option value="Before Dinner Cocktail">Before Dinner Cocktail</option>
                 <option value="After Dinner Cocktail">After Dinner Cocktail</option>
@@ -63,7 +89,7 @@ class AddCocktail extends Component {
           </label>
           <label>
             <div className="visually-hidden">Glass</div>
-            <select name="glass" onChange={this.handleChange}>
+            <select name="glass" onChange={this.handleGlassChange}>
                 <option value="">Select Glass</option>
                 <option value="martini">Martini</option>
                 <option value="old-fashioned">Old-fashioned</option>
@@ -75,14 +101,14 @@ class AddCocktail extends Component {
           </label>
           <label>
             <div className="visually-hidden">Garnish</div>
-            <input type="text" placeholder="Garnish" name="granish" onChange={this.handleChange} />
+            <input type="text" placeholder="Garnish" name="granish" onChange={this.handleGarnishChange} />
           </label>
           <label>
             <div className="visually-hidden">Preparation</div>
             <textarea
               name="preparation"
               placeholder="Preparation"
-              onChange={this.handleChange}
+              onChange={this.handlePreparationChange}
             />
           </label>
           <label>
@@ -90,7 +116,7 @@ class AddCocktail extends Component {
             <textarea
               name="ingredients"
               placeholder="Ingredients"
-              onChange={this.handleChange}
+              onChange={this.handleIngredientsChange}
             />
           </label>
           <div>
