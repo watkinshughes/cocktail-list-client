@@ -1,3 +1,7 @@
+.AddCocktail {
+  clear: both;
+}
+
 .AddCocktail input[type="text"],
 .AddCocktail textarea,
 .AddCocktail select {
