@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Title from "../Title";
 import CocktailList from "../CocktailList";
@@ -9,9 +9,9 @@ import styles from "./styles.module.css";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <Router>
-          <div>
+          <Fragment>
             <header>
               <Link to="/">
                 <Title copy="Cocktail List" />
@@ -25,9 +25,9 @@ class App extends Component {
               <Route path="/add-cocktail" component={AddCocktail} />
               <Route path="/:id" component={CocktailDetails} />
             </Switch>
-          </div>
+          </Fragment>
         </Router>
-      </div>
+      </Fragment>
     );
   }
 }
