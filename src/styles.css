@@ -19,26 +19,26 @@ code {
 }
 
 h1 {
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0;
-    padding: 20px 0;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+  padding: 20px 0;
 }
 
 h2 {
-    font-size: 1em;
-    font-weight: bold;
+  font-size: 1em;
+  font-weight: bold;
 }
 
 a {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    color: #000;
-    text-align: left;
-    text-decoration: none;
-    cursor: pointer;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: #000;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 fieldset {
@@ -64,5 +64,5 @@ input {
 }
 
 .display-linebreak {
-    white-space: pre-line;
+  white-space: pre-line;
 }
