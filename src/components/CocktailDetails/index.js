@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 class CocktailDetails extends Component {
   state = {
@@ -30,7 +30,7 @@ class CocktailDetails extends Component {
       return <p>Loading...</p>;
     } else {
       return (
-        <div className="Cocktail-details">
+        <div className={styles.details}>
           <h2>{this.state.data.name}</h2>
           <div className="display-linebreak">{this.state.data.ingredients}</div>
           <p>{this.state.data.preparation}</p>

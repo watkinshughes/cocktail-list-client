@@ -4,7 +4,7 @@ import Title from "../Title";
 import CocktailList from "../CocktailList";
 import AddCocktail from "../AddCocktail";
 import CocktailDetails from "../CocktailDetails";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
               <Link to="/">
                 <Title copy="Cocktail List" />
               </Link>
-              <Link className="menu" to="/add-cocktail">
+              <Link className={styles.menu} to="/add-cocktail">
                 Add cocktail
               </Link>
             </header>

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 class AddCocktail extends Component {
   state = {
@@ -72,10 +72,11 @@ class AddCocktail extends Component {
   render() {
     return (
       <Fragment>
-        <form className="AddCocktail" onSubmit={this.handleSubmit}>
+        <form className={styles.form} onSubmit={this.handleSubmit}>
           <label>
             <div className="visually-hidden">Name</div>
             <input
+              className={styles.input}
               type="text"
               name="name"
               placeholder="Name"
@@ -84,7 +85,11 @@ class AddCocktail extends Component {
           </label>
           <label>
             <div className="visually-hidden">Category</div>
-            <select name="category" onChange={this.handleCategoryChange}>
+            <select
+              className={styles.input}
+              name="category"
+              onChange={this.handleCategoryChange}
+            >
               <option value="">Select Category</option>
               <option value="Before Dinner Cocktail">
                 Before Dinner Cocktail
@@ -98,7 +103,11 @@ class AddCocktail extends Component {
           </label>
           <label>
             <div className="visually-hidden">Glass</div>
-            <select name="glass" onChange={this.handleGlassChange}>
+            <select
+              className={styles.input}
+              name="glass"
+              onChange={this.handleGlassChange}
+            >
               <option value="">Select Glass</option>
               <option value="martini">Martini</option>
               <option value="old-fashioned">Old-fashioned</option>
@@ -111,6 +120,7 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Garnish</div>
             <input
+              className={styles.input}
               type="text"
               placeholder="Garnish"
               name="granish"
@@ -120,6 +130,7 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Preparation</div>
             <textarea
+              className={styles.input}
               name="preparation"
               placeholder="Preparation"
               onChange={this.handlePreparationChange}
@@ -128,13 +139,16 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Ingredients</div>
             <textarea
+              className={styles.input}
               name="ingredients"
               placeholder="Ingredients"
               onChange={this.handleIngredientsChange}
             />
           </label>
           <div>
-            <button type="submit">Submit</button>
+            <button className={styles.button} type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </Fragment>
