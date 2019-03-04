@@ -34,8 +34,8 @@ class CocktailDetails extends Component {
       );
     } else {
       return (
-        <div className={styles.details}>
-          <h2>{this.state.data.name}</h2>
+        <article className={styles.details}>
+          <h1>{this.state.data.name}</h1>
           <div className="display-linebreak">{this.state.data.ingredients}</div>
           <p>{this.state.data.preparation}</p>
           <p>{this.state.data.garnish}</p>
@@ -43,7 +43,7 @@ class CocktailDetails extends Component {
             <em>{this.state.data.category}</em>
           </h2>
           <Link to="/">← Back</Link>
-        </div>
+        </article>
       );
     }
   }
