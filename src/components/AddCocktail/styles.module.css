@@ -2,16 +2,6 @@
   clear: both;
 }
 
-.input {
-  -webkit-appearance: none;
-  border: 1px solid #ccc;
-  padding: 20px 0;
-  margin: 10px 0;
-  display: block;
-  width: 100%;
-  text-indent: 1em;
-}
-
 .button {
   -webkit-appearance: none;
   border: 1px solid #ccc;

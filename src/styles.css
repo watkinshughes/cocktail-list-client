@@ -46,10 +46,13 @@ fieldset {
   padding: 0;
 }
 
-input {
+input,
+select,
+textarea {
   -webkit-appearance: none;
   border: 1px solid #ccc;
   padding: 20px 0;
+  margin: 10px 0;
   display: block;
   width: 100%;
   text-indent: 1em;

@@ -76,7 +76,6 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Name</div>
             <input
-              className={styles.input}
               type="text"
               name="name"
               placeholder="Name"
@@ -85,11 +84,7 @@ class AddCocktail extends Component {
           </label>
           <label>
             <div className="visually-hidden">Category</div>
-            <select
-              className={styles.input}
-              name="category"
-              onChange={this.handleCategoryChange}
-            >
+            <select name="category" onChange={this.handleCategoryChange}>
               <option value="">Select Category</option>
               <option value="Before Dinner Cocktail">
                 Before Dinner Cocktail
@@ -103,11 +98,7 @@ class AddCocktail extends Component {
           </label>
           <label>
             <div className="visually-hidden">Glass</div>
-            <select
-              className={styles.input}
-              name="glass"
-              onChange={this.handleGlassChange}
-            >
+            <select name="glass" onChange={this.handleGlassChange}>
               <option value="">Select Glass</option>
               <option value="martini">Martini</option>
               <option value="old-fashioned">Old-fashioned</option>
@@ -120,7 +111,6 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Garnish</div>
             <input
-              className={styles.input}
               type="text"
               placeholder="Garnish"
               name="granish"
@@ -130,7 +120,6 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Preparation</div>
             <textarea
-              className={styles.input}
               name="preparation"
               placeholder="Preparation"
               onChange={this.handlePreparationChange}
@@ -139,7 +128,6 @@ class AddCocktail extends Component {
           <label>
             <div className="visually-hidden">Ingredients</div>
             <textarea
-              className={styles.input}
               name="ingredients"
               placeholder="Ingredients"
               onChange={this.handleIngredientsChange}
