@@ -27,7 +27,11 @@ class CocktailDetails extends Component {
 
   render() {
     if (this.state.loading) {
-      return <p>Loading...</p>;
+      return (
+        <div className="loading">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      )
     } else {
       return (
         <div className={styles.details}>
