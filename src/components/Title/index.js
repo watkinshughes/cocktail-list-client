@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import './styles.css';
+import React, { Component } from "react";
+import "./styles.css";
 
 class Title extends Component {
   render() {
-    return <h1 className="Title">
-        { this.props.copy }
-      </h1>
+    return <h1 className="Title">{this.props.copy}</h1>;
   }
 }
 

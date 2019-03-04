@@ -1,24 +1,30 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Title from '../Title';
-import CocktailsList from '../CocktailsList';
-import CocktailDetails from '../CocktailDetails';
-import './styles.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Title from "../Title";
+import CocktailsList from "../CocktailsList";
+import AddCocktail from "../AddCocktail";
+import CocktailDetails from "../CocktailDetails";
+import "./styles.css";
 
 class App extends Component {
   render() {
     return (
-      
       <div className="App">
-      <Router>
-          <div> 
-            <Link to="/">
-              <Title copy="Cocktail List"/>
-            </Link>
-            <Route exact path="/" component={ CocktailsList } />
-            <Route path="/:id" component={ CocktailDetails } />
-    
-
+        <Router>
+          <div>
+            <header>
+              <Link to="/">
+                <Title copy="Cocktail List" />
+              </Link>
+              <Link className="menu" to="/add-cocktail">
+                Add cocktail
+              </Link>
+            </header>
+            <Switch>
+              <Route exact path="/" component={CocktailsList} />
+              <Route path="/add-cocktail" component={AddCocktail} />
+              <Route path="/:id" component={CocktailDetails} />
+            </Switch>
           </div>
         </Router>
       </div>

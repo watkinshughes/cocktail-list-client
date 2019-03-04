@@ -1,15 +1,17 @@
-.Cocktails-list fieldset {
-    border: 0;
-    padding: 0;
+.Cocktail-list {
+  clear: both;
 }
 
-.Cocktails-list input[type="text"] {
-    -webkit-appearance: none;
-    border: 0;
-    padding: 20px 0;
-    display: block;
-    width: 100%;
-    font-size: 20px;
-    text-indent: 1em;
-    border-radius: 40px;
+.Cocktail-list fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.Cocktail-list input[type="text"] {
+  -webkit-appearance: none;
+  border: 1px solid #ccc;
+  padding: 20px 0;
+  display: block;
+  width: 100%;
+  text-indent: 1em;
 }
