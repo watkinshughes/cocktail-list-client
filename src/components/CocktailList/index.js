@@ -67,7 +67,7 @@ class CocktailList extends Component {
         <div className="loading">
           <span className="visually-hidden">Loading...</span>
         </div>
-      )
+      );
     } else {
       return (
         <section className={styles.list}>
