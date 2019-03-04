@@ -10,7 +10,7 @@ class AddCocktail extends Component {
     garnish: "",
     preparation: "",
     ingredients: ""
-  }
+  };
 
   handleNameChange = event => {
     this.setState({

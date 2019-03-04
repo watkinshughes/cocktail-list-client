@@ -8,7 +8,7 @@ class CocktailsList extends Component {
     initialData: [],
     data: [],
     loading: true
-  }
+  };
 
   sortData = data => {
     return data.sort(function(a, b) {
@@ -20,7 +20,7 @@ class CocktailsList extends Component {
       }
       return 0;
     });
-  }
+  };
 
   fetchData = () => {
     const url = "https://cocktail-list-api.herokuapp.com/cocktails";
@@ -31,7 +31,7 @@ class CocktailsList extends Component {
         loading: false
       });
     });
-  }
+  };
 
   buildCocktailsList = data => {
     return data.map(node => {
@@ -41,7 +41,7 @@ class CocktailsList extends Component {
         </Cocktail>
       );
     });
-  }
+  };
 
   filterList = event => {
     let updatedList = this.state.initialData;
@@ -52,7 +52,7 @@ class CocktailsList extends Component {
     this.setState({
       data: updatedList
     });
-  }
+  };
 
   componentDidMount() {
     this.fetchData();

@@ -7,8 +7,7 @@ class CocktailDetails extends Component {
   state = {
     data: {},
     loading: true
-  }
-    
+  };
 
   fetchData = () => {
     const url = `https://cocktail-list-api.herokuapp.com/cocktails/${
@@ -20,7 +19,7 @@ class CocktailDetails extends Component {
         loading: false
       });
     });
-  }
+  };
 
   componentDidMount() {
     this.fetchData();
