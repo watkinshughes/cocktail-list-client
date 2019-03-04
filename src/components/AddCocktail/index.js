@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import axios from "axios";
 import "./styles.css";
 
@@ -71,7 +71,7 @@ class AddCocktail extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <form className="AddCocktail" onSubmit={this.handleSubmit}>
           <label>
             <div className="visually-hidden">Name</div>
@@ -137,7 +137,7 @@ class AddCocktail extends Component {
             <button type="submit">Submit</button>
           </div>
         </form>
-      </div>
+      </Fragment>
     );
   }
 }
