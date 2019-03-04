@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Title from "../Title";
-import CocktailsList from "../CocktailsList";
+import CocktailList from "../CocktailList";
 import AddCocktail from "../AddCocktail";
 import CocktailDetails from "../CocktailDetails";
 import "./styles.css";
@@ -21,7 +21,7 @@ class App extends Component {
               </Link>
             </header>
             <Switch>
-              <Route exact path="/" component={CocktailsList} />
+              <Route exact path="/" component={CocktailList} />
               <Route path="/add-cocktail" component={AddCocktail} />
               <Route path="/:id" component={CocktailDetails} />
             </Switch>

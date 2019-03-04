@@ -3,7 +3,7 @@ import axios from "axios";
 import Cocktail from "../Cocktail";
 import "./styles.css";
 
-class CocktailsList extends Component {
+class CocktailList extends Component {
   state = {
     initialData: [],
     data: [],
@@ -84,4 +84,4 @@ class CocktailsList extends Component {
   }
 }
 
-export default CocktailsList;
+export default CocktailList;
