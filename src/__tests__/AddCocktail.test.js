@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "../components/App";
+import AddCocktail from "../components/AddCocktail";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<AddCocktail />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
