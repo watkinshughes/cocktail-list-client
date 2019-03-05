@@ -6,7 +6,9 @@ class Title extends Component {
   render() {
     return (
       <h1 className={styles.title}>
-        <Link to="/">{this.props.copy}</Link>
+        <Link className={styles.link} to="/">
+          {this.props.copy}
+        </Link>
       </h1>
     );
   }
