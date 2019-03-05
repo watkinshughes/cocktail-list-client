@@ -2,25 +2,15 @@
 
 exports[`snapsot 1`] = `
 Array [
-  <header>
-    <a
-      href="/"
-      onClick={[Function]}
+  <div
+    className="loading"
+  >
+    <span
+      className="visually-hidden"
     >
-      <h1
-        className="title"
-      >
-        Cocktail List
-      </h1>
-    </a>
-    <a
-      className="menu"
-      href="/add-cocktail"
-      onClick={[Function]}
-    >
-      Add cocktail
-    </a>
-  </header>,
+      Loading...
+    </span>
+  </div>,
   <div
     className="loading"
   >

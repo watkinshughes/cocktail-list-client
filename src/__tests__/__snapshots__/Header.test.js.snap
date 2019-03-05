@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapsot 1`] = `
+<header>
+  <h1
+    className="title"
+  >
+    <a
+      className="link"
+      href="/"
+      onClick={[Function]}
+    >
+      Cocktail List
+    </a>
+  </h1>
+  <a
+    className="menu"
+    href="/add-cocktail"
+    onClick={[Function]}
+  >
+    Add cocktail
+  </a>
+</header>
+`;
