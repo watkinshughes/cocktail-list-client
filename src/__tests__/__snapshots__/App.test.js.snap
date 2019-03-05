@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapsot 1`] = `
+Array [
+  <header>
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <h1
+        className="title"
+      >
+        Cocktail List
+      </h1>
+    </a>
+    <a
+      className="menu"
+      href="/add-cocktail"
+      onClick={[Function]}
+    >
+      Add cocktail
+    </a>
+  </header>,
+  <div
+    className="loading"
+  >
+    <span
+      className="visually-hidden"
+    >
+      Loading...
+    </span>
+  </div>,
+]
+`;
