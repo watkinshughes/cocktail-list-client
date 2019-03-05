@@ -26,26 +26,18 @@ class CocktailDetails extends Component {
   }
 
   render() {
-    if (this.state.loading) {
-      return (
-        <div className="loading">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      );
-    } else {
-      return (
-        <article className={styles.details}>
-          <h1>{this.state.data.name}</h1>
-          <div className="display-linebreak">{this.state.data.ingredients}</div>
-          <p>{this.state.data.preparation}</p>
-          <p>{this.state.data.garnish}</p>
-          <h2>
-            <em>{this.state.data.category}</em>
-          </h2>
-          <Link to="/">← Back</Link>
-        </article>
-      );
-    }
+    return (
+      <article className={styles.details}>
+        <h1>{this.state.data.name}</h1>
+        <div className="display-linebreak">{this.state.data.ingredients}</div>
+        <p>{this.state.data.preparation}</p>
+        <p>{this.state.data.garnish}</p>
+        <h2>
+          <em>{this.state.data.category}</em>
+        </h2>
+        <Link to="/">← Back</Link>
+      </article>
+    );
   }
 }
 

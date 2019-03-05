@@ -62,29 +62,21 @@ class CocktailList extends Component {
   }
 
   render() {
-    if (this.state.loading) {
-      return (
-        <div className="loading">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      );
-    } else {
-      return (
-        <section className={styles.list}>
-          <form>
-            <fieldset>
-              <input
-                type="text"
-                className="Search"
-                placeholder="Filter by name"
-                onChange={this.filterList}
-              />
-            </fieldset>
-          </form>
-          {this.buildCocktailsList(this.state.data)}
-        </section>
-      );
-    }
+    return (
+      <section className={styles.list}>
+        <form>
+          <fieldset>
+            <input
+              type="text"
+              className="Search"
+              placeholder="Filter by name"
+              onChange={this.filterList}
+            />
+          </fieldset>
+        </form>
+        {this.buildCocktailsList(this.state.data)}
+      </section>
+    );
   }
 }
 

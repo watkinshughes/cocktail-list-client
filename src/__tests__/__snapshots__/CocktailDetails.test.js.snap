@@ -1,13 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snapsot 1`] = `
-<div
-  className="loading"
+<article
+  className="details"
 >
-  <span
-    className="visually-hidden"
+  <h1 />
+  <div
+    className="display-linebreak"
+  />
+  <p />
+  <p />
+  <h2>
+    <em />
+  </h2>
+  <a
+    href="/"
+    onClick={[Function]}
   >
-    Loading...
-  </span>
-</div>
+    ← Back
+  </a>
+</article>
 `;

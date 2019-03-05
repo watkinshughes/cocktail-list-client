@@ -1,10 +1,24 @@
 import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Loadable from "react-loadable";
 import Title from "../Title";
-import CocktailList from "../CocktailList";
-import AddCocktail from "../AddCocktail";
-import CocktailDetails from "../CocktailDetails";
+import Loading from "../Loading";
 import styles from "./styles.module.css";
+
+const CocktailList = Loadable({
+  loader: () => import("../CocktailList"),
+  loading: Loading
+});
+
+const CocktailDetails = Loadable({
+  loader: () => import("../CocktailDetails"),
+  loading: Loading
+});
+
+const AddCocktail = Loadable({
+  loader: () => import("../AddCocktail"),
+  loading: Loading
+});
 
 class App extends Component {
   render() {

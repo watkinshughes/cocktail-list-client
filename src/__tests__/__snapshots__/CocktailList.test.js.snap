@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snapsot 1`] = `
-<div
-  className="loading"
+<section
+  className="list"
 >
-  <span
-    className="visually-hidden"
-  >
-    Loading...
-  </span>
-</div>
+  <form>
+    <fieldset>
+      <input
+        className="Search"
+        onChange={[Function]}
+        placeholder="Filter by name"
+        type="text"
+      />
+    </fieldset>
+  </form>
+</section>
 `;
