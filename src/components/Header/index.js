@@ -7,14 +7,12 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Router>
-          <Fragment>
-            <Title copy="Cocktail List" />
-            <Link className={styles.menu} to="/add-cocktail">
-              Add cocktail
-            </Link>
-          </Fragment>
-        </Router>
+        <Fragment>
+          <Title copy="Cocktail List" />
+          <Link className={styles.menu} to="/add-cocktail">
+            Add cocktail
+          </Link>
+        </Fragment>
       </header>
     );
   }
