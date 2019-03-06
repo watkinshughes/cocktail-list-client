@@ -45,13 +45,11 @@ class CocktailList extends Component {
 
   filterList = event => {
     let updatedList = this.state.initialData;
+    let typedWord = new RegExp(`\\b${event.target.value.toLowerCase()}\\b`);
     updatedList = updatedList.filter(
       node =>
-        node.name.toLowerCase().search(event.target.value.toLowerCase()) !==
-          -1 ||
-        node.ingredients
-          .toLowerCase()
-          .search(event.target.value.toLowerCase()) !== -1
+        node.name.toLowerCase().search(typedWord) !== -1 ||
+        node.ingredients.toLowerCase().search(typedWord) !== -1
     );
     this.setState({
       data: updatedList
@@ -71,7 +69,9 @@ class CocktailList extends Component {
         <form>
           <fieldset>
             <label>
-              <span className="visually-hidden">Filter by name or search by ingredient</span>
+              <span className="visually-hidden">
+                Filter by name or search by ingredient
+              </span>
               <input
                 type="text"
                 className="Search"
