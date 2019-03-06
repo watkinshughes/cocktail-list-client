@@ -70,12 +70,15 @@ class CocktailList extends Component {
       <section className={styles.list}>
         <form>
           <fieldset>
-            <input
-              type="text"
-              className="Search"
-              placeholder="Filter by name or search by ingredient"
-              onChange={this.filterList}
-            />
+            <label>
+              <span className="visually-hidden">Filter by name or search by ingredient</span>
+              <input
+                type="text"
+                className="Search"
+                placeholder="Filter by name or search by ingredient"
+                onChange={this.filterList}
+              />
+            </label>
           </fieldset>
         </form>
         {this.buildCocktailsList(this.state.data)}

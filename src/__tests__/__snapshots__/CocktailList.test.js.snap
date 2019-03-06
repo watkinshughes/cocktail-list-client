@@ -6,12 +6,19 @@ exports[`snapsot 1`] = `
 >
   <form>
     <fieldset>
-      <input
-        className="Search"
-        onChange={[Function]}
-        placeholder="Filter by name"
-        type="text"
-      />
+      <label>
+        <span
+          className="visually-hidden"
+        >
+          Filter by name or search by ingredient
+        </span>
+        <input
+          className="Search"
+          onChange={[Function]}
+          placeholder="Filter by name or search by ingredient"
+          type="text"
+        />
+      </label>
     </fieldset>
   </form>
 </section>

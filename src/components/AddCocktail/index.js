@@ -74,7 +74,7 @@ class AddCocktail extends Component {
       <Fragment>
         <form className={styles.form} onSubmit={this.handleSubmit}>
           <label>
-            <div className="visually-hidden">Name</div>
+            <span className="visually-hidden">Name</span>
             <input
               type="text"
               name="name"
@@ -83,7 +83,7 @@ class AddCocktail extends Component {
             />
           </label>
           <label>
-            <div className="visually-hidden">Category</div>
+            <span className="visually-hidden">Category</span>
             <select name="category" onChange={this.handleCategoryChange}>
               <option value="">Select Category</option>
               <option value="Before Dinner Cocktail">
@@ -97,7 +97,7 @@ class AddCocktail extends Component {
             </select>
           </label>
           <label>
-            <div className="visually-hidden">Glass</div>
+            <span className="visually-hidden">Glass</span>
             <select name="glass" onChange={this.handleGlassChange}>
               <option value="">Select Glass</option>
               <option value="martini">Martini</option>
@@ -109,7 +109,7 @@ class AddCocktail extends Component {
             </select>
           </label>
           <label>
-            <div className="visually-hidden">Garnish</div>
+            <span className="visually-hidden">Garnish</span>
             <input
               type="text"
               placeholder="Garnish"
@@ -118,7 +118,7 @@ class AddCocktail extends Component {
             />
           </label>
           <label>
-            <div className="visually-hidden">Preparation</div>
+            <span className="visually-hidden">Preparation</span>
             <textarea
               name="preparation"
               placeholder="Preparation"
@@ -126,7 +126,7 @@ class AddCocktail extends Component {
             />
           </label>
           <label>
-            <div className="visually-hidden">Ingredients</div>
+            <span className="visually-hidden">Ingredients</span>
             <textarea
               name="ingredients"
               placeholder="Ingredients"
