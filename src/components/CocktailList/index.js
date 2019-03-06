@@ -47,7 +47,11 @@ class CocktailList extends Component {
     let updatedList = this.state.initialData;
     updatedList = updatedList.filter(
       node =>
-        node.name.toLowerCase().search(event.target.value.toLowerCase()) !== -1
+        node.name.toLowerCase().search(event.target.value.toLowerCase()) !==
+          -1 ||
+        node.ingredients
+          .toLowerCase()
+          .search(event.target.value.toLowerCase()) !== -1
     );
     this.setState({
       data: updatedList
@@ -69,7 +73,7 @@ class CocktailList extends Component {
             <input
               type="text"
               className="Search"
-              placeholder="Filter by name"
+              placeholder="Filter by name or search by ingredient"
               onChange={this.filterList}
             />
           </fieldset>
