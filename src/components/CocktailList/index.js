@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from "axios";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
 import Cocktail from "../Cocktail";
 import styles from "./styles.module.css";
 
@@ -8,39 +9,6 @@ class CocktailList extends Component {
     initialData: [],
     data: [],
     loading: true
-  };
-
-  sortData = data => {
-    return data.sort(function(a, b) {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-  };
-
-  fetchData = () => {
-    const url = "https://cocktail-list-api.herokuapp.com/cocktails";
-    axios.get(url).then(response => {
-      this.setState({
-        data: this.sortData(response.data),
-        initialData: this.sortData(response.data),
-        loading: false
-      });
-    });
-  };
-
-  buildCocktailsList = data => {
-    return data.map(node => {
-      return (
-        <Cocktail key={node.name} info={node}>
-          {node.children}
-        </Cocktail>
-      );
-    });
   };
 
   filterList = event => {
@@ -57,7 +25,6 @@ class CocktailList extends Component {
   };
 
   componentDidMount() {
-    this.fetchData();
     this.setState({
       data: this.state.initialData
     });
@@ -81,7 +48,24 @@ class CocktailList extends Component {
             </label>
           </fieldset>
         </form>
-        {this.buildCocktailsList(this.state.data)}
+        <Query
+          query={gql`
+            {
+              cocktails(sort: "name:ASC") {
+                name
+                _id
+              }
+            }
+          `}
+        >
+          {({ loading, error, data }) => {
+            if (loading) return <p>Loading...</p>;
+            if (error) return <p>Error :(</p>;
+            return data.cocktails.map(({ name, _id }) => (
+              <Cocktail key={_id} id={_id} name={name} />
+            ));
+          }}
+        </Query>
       </section>
     );
   }

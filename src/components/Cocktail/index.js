@@ -6,8 +6,8 @@ class Cocktail extends Component {
   render() {
     return (
       <article className={styles.cocktail}>
-        <Link to={this.props.info.id}>
-          <h1>{this.props.info.name}</h1>
+        <Link to={this.props.id}>
+          <h1>{this.props.name}</h1>
         </Link>
       </article>
     );
