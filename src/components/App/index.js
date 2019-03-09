@@ -2,14 +2,10 @@ import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Loadable from "react-loadable";
 import Loading from "../Loading";
+import CocktailList from "../CocktailList";
 
 const Header = Loadable({
   loader: () => import("../Header"),
-  loading: Loading
-});
-
-const CocktailList = Loadable({
-  loader: () => import("../CocktailList"),
   loading: Loading
 });
 
