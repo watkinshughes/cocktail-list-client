@@ -16,9 +16,7 @@ const GET_COCKTAIL_NAMES = gql`
 
 class CocktailList extends Component {
   state = {
-    data: {
-      cocktails: []
-    }
+    data: {}
   };
 
   filterList = event => {
