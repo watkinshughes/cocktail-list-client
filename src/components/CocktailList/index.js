@@ -9,18 +9,11 @@ const GET_COCKTAIL_NAMES = gql`
     cocktails(sort: $sort, where: $where) {
       _id
       name
-    }
-  }
-`;
-
-const GET_COCKTAIL_DETAILS = gql`
-  query DrinksQuery($where: JSON) {
-    cocktails(where: $where) {
-      _id
       ingredients
     }
   }
 `;
+
 
 class CocktailList extends Component {
   state = {
@@ -62,42 +55,31 @@ class CocktailList extends Component {
           variables={{
             sort: "name: ASC",
             where: {
-              name_contains: this.state.data.name_contains
+              name_contains: this.state.data.name_contains,
+              ingredients_contains: this.state.data.ingredients_contains
             }
           }}
         >
+        
         {({ loading, error, data }) => {
           if (loading) return null;
           if (error) return `Error: ${error}`;
-          
-          return <Query 
-            query={GET_COCKTAIL_DETAILS}
-            variables={{
-              where: {
-                ingredients_contains: this.state.data.ingredients_contains  
-              }
-            }}
-          >
-            {({ loading, error }) => {
-              if (loading) return null;
-              if (error) return `Error: ${error}`;
-              return (
-                <div>
-                  {data.cocktails.map(({ name, _id, ingredients }) => {
-                    return (
-                      <Cocktail
-                        key={_id}
-                        id={_id}
-                        name={name}
-                        ingredients={ingredients}
-                      />
-                    );
-                  })}
-                </div>
-              );
-            }}
-          </Query>
+          return (
+            <div>
+              {data.cocktails.map(({ name, _id, ingredients }) => {
+                return (
+                  <Cocktail
+                    key={_id}
+                    id={_id}
+                    name={name}
+                    ingredients={ingredients}
+                  />
+                );
+              })}
+            </div>
+          );
         }}
+          
         </Query>
       </section>
     );
