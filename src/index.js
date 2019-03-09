@@ -4,25 +4,11 @@ import "./styles.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 import ApolloClient from "apollo-boost";
-import gql from "graphql-tag";
 import { ApolloProvider } from "react-apollo";
 
 const client = new ApolloClient({
   uri: "https://cocktail-list-api.herokuapp.com/graphql"
 });
-
-client
-  .query({
-    query: gql`
-      {
-        cocktails {
-          name
-          _id
-        }
-      }
-    `
-  })
-  .then(result => console.log(result));
 
 ReactDOM.render(
   <ApolloProvider client={client}>
