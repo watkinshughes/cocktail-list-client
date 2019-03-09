@@ -17,13 +17,7 @@ const GET_COCKTAIL_DETAILS = gql`
   }
 `;
 
-
 class CocktailDetails extends Component {
-  state = {
-    data: {},
-    loading: true
-  };
-
   render() {
     return (
       <Query
@@ -40,7 +34,9 @@ class CocktailDetails extends Component {
           return (
             <article className={styles.details}>
               <h1>{data.cocktails[0].name}</h1>
-              <div className="display-linebreak">{data.cocktails[0].ingredients}</div>
+              <div className="display-linebreak">
+                {data.cocktails[0].ingredients}
+              </div>
               <p>{data.cocktails[0].preparation}</p>
               <p>{data.cocktails[0].garnish}</p>
               <h2>

@@ -5,7 +5,6 @@ import CocktailList from "../CocktailList";
 import CocktailDetails from "../CocktailDetails";
 import AddCocktail from "../AddCocktail";
 
-
 class App extends Component {
   render() {
     return (
