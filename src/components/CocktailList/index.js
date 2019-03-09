@@ -14,7 +14,6 @@ const GET_COCKTAIL_NAMES = gql`
   }
 `;
 
-
 class CocktailList extends Component {
   state = {
     data: {
@@ -23,11 +22,11 @@ class CocktailList extends Component {
   };
 
   filterList = event => {
-    const typedWord = event.target.value
+    const typedWord = event.target.value;
     this.setState({
       data: {
-        // ingredients_contains: typedWord,
-        name_contains: typedWord
+        // name_contains: typedWord,
+        ingredients_contains: typedWord
       }
     });
   };
@@ -51,16 +50,15 @@ class CocktailList extends Component {
           </fieldset>
         </form>
         <Query
-            query={GET_COCKTAIL_NAMES}
-            variables={{
-              sort: "name: ASC",
-              where: {
-                name_contains: this.state.data.name_contains,
-                ingredients_contains: this.state.data.ingredients_contains
-              }
-            }}
-          >
-          
+          query={GET_COCKTAIL_NAMES}
+          variables={{
+            sort: "name: ASC",
+            where: {
+              // name_contains: this.state.data.name_contains,
+              ingredients_contains: this.state.data.ingredients_contains
+            }
+          }}
+        >
           {({ loading, error, data }) => {
             if (loading) return null;
             if (error) return `Error: ${error}`;
