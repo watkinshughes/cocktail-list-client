@@ -7,7 +7,7 @@ import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
 
 const client = new ApolloClient({
-  uri: "https://cocktail-list-api.herokuapp.com/graphql"
+  uri: "https://api-useast.graphcms.com/v1/cjt2x3bl34akq019e11l81bcs/master"
 });
 
 ReactDOM.render(

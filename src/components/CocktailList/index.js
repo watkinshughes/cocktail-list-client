@@ -5,11 +5,39 @@ import Cocktail from "../Cocktail";
 import styles from "./styles.module.css";
 
 const GET_COCKTAIL_NAMES = gql`
-  query DrinksQuery($sort: String, $where: JSON) {
-    cocktails(sort: $sort, where: $where) {
-      _id
-      name
-      ingredients
+  query content($first: Int, $skip: Int, $ingredients_contains: String) {
+    cocktails: cocktailsConnection(
+      orderBy: name_ASC
+      first: $first
+      skip: $skip
+      where: { ingredients_contains: $ingredients_contains }
+    ) {
+      edges {
+        node {
+          status
+          updatedAt
+          createdAt
+          id
+          name
+          glass
+          category
+          garnish
+          preparation
+          ingredients
+          image {
+            status
+            updatedAt
+            createdAt
+            id
+            handle
+            fileName
+            height
+            width
+            size
+            mimeType
+          }
+        }
+      }
     }
   }
 `;
@@ -23,7 +51,6 @@ class CocktailList extends Component {
     const typedWord = event.target.value;
     this.setState({
       data: {
-        // name_contains: typedWord,
         ingredients_contains: typedWord
       }
     });
@@ -41,7 +68,7 @@ class CocktailList extends Component {
               <input
                 type="text"
                 className="Search"
-                placeholder="Filter by name or search by ingredient"
+                placeholder="Search by ingredient"
                 onChange={this.filterList}
               />
             </label>
@@ -50,11 +77,7 @@ class CocktailList extends Component {
         <Query
           query={GET_COCKTAIL_NAMES}
           variables={{
-            sort: "name: ASC",
-            where: {
-              // name_contains: this.state.data.name_contains,
-              ingredients_contains: this.state.data.ingredients_contains
-            }
+            ingredients_contains: this.state.data.ingredients_contains
           }}
         >
           {({ loading, error, data }) => {
@@ -62,13 +85,13 @@ class CocktailList extends Component {
             if (error) return `Error: ${error}`;
             return (
               <div>
-                {data.cocktails.map(({ name, _id, ingredients }) => {
+                {data.cocktails.edges.map(({ node }) => {
                   return (
                     <Cocktail
-                      key={_id}
-                      id={_id}
-                      name={name}
-                      ingredients={ingredients}
+                      key={node.id}
+                      id={node.id}
+                      name={node.name}
+                      ingredients={node.ingredients}
                     />
                   );
                 })}

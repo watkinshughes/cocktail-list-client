@@ -4,34 +4,24 @@ import { Mutation } from "react-apollo";
 import styles from "./styles.module.css";
 
 const CREATE_COCKTAIL = gql`
-  mutation CreateNewCocktail(
-    $name: String!
-    $ingredients: String!
-    $glass: String
-    $garnish: String
-    $category: String
-    $preparation: String
-  ) {
+  mutation($name: String!,  $ingredients: String!, $glass: String!, $garnish: String, $category: String, $preparation: String!) {
     createCocktail(
-      input: {
-        data: {
-          name: $name
-          ingredients: $ingredients
-          glass: $glass
-          garnish: $garnish
-          category: $category
-          preparation: $preparation
-        }
+      data: {
+        status: PUBLISHED
+        name: $name
+        ingredients: $ingredients
+        glass: $glass
+        garnish: $garnish
+        category: $category
+        preparation: $preparation
       }
     ) {
-      cocktail {
-        name
-        ingredients
-        glass
-        garnish
-        category
-        preparation
-      }
+      name
+      ingredients
+      glass
+      garnish
+      category
+      preparation
     }
   }
 `;

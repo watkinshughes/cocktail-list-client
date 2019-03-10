@@ -5,14 +5,30 @@ import gql from "graphql-tag";
 import styles from "./styles.module.css";
 
 const GET_COCKTAIL_DETAILS = gql`
-  query DrinksQuery($where: JSON) {
-    cocktails(where: $where) {
-      _id
+  query($id: ID) {
+    cocktail(where: { id: $id }) {
+      status
+      updatedAt
+      createdAt
+      id
       name
-      ingredients
-      preparation
-      garnish
+      glass
       category
+      garnish
+      preparation
+      ingredients
+      image {
+        status
+        updatedAt
+        createdAt
+        id
+        handle
+        fileName
+        height
+        width
+        size
+        mimeType
+      }
     }
   }
 `;
@@ -23,9 +39,7 @@ class CocktailDetails extends Component {
       <Query
         query={GET_COCKTAIL_DETAILS}
         variables={{
-          where: {
-            id: this.props.match.params.id
-          }
+          id: this.props.match.params.id
         }}
       >
         {({ loading, error, data }) => {
@@ -33,14 +47,14 @@ class CocktailDetails extends Component {
           if (error) return `Error: ${error}`;
           return (
             <article className={styles.details}>
-              <h1>{data.cocktails[0].name}</h1>
+              <h1>{data.cocktail.name}</h1>
               <div className="display-linebreak">
-                {data.cocktails[0].ingredients}
+                {data.cocktail.ingredients}
               </div>
-              <p>{data.cocktails[0].preparation}</p>
-              <p>{data.cocktails[0].garnish}</p>
+              <p>{data.cocktail.preparation}</p>
+              <p>{data.cocktail.garnish}</p>
               <h2>
-                <em>{data.cocktails[0].category}</em>
+                <em>{data.cocktail.category}</em>
               </h2>
               <Link to="/">← Back</Link>
             </article>
