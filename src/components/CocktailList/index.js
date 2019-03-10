@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import Cocktail from "../Cocktail";
+import SearchBox from "../SearchBox";
 import styles from "./styles.module.css";
 
 const GET_COCKTAIL_NAMES = gql`
@@ -59,21 +60,7 @@ class CocktailList extends Component {
   render() {
     return (
       <section className={styles.list}>
-        <form>
-          <fieldset>
-            <label>
-              <span className="visually-hidden">
-                Filter by name or search by ingredient
-              </span>
-              <input
-                type="text"
-                className="Search"
-                placeholder="Search by ingredient"
-                onChange={this.filterList}
-              />
-            </label>
-          </fieldset>
-        </form>
+        <SearchBox />
         <Query
           query={GET_COCKTAIL_NAMES}
           variables={{
