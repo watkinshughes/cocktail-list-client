@@ -1,17 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
-class Title extends Component {
-  render() {
-    return (
-      <h1 className={styles.title}>
-        <Link className={styles.link} to="/">
-          {this.props.copy}
-        </Link>
-      </h1>
-    );
-  }
+export default function Title(props) {
+  return (
+    <h1 className={styles.title}>
+      <Link className={styles.link} to="/">
+        {props.copy}
+      </Link>
+    </h1>
+  );
 }
-
-export default Title;

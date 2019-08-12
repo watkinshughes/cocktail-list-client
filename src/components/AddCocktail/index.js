@@ -4,7 +4,14 @@ import { Mutation } from "react-apollo";
 import styles from "./styles.module.css";
 
 const CREATE_COCKTAIL = gql`
-  mutation($name: String!,  $ingredients: String!, $glass: String!, $garnish: String, $category: String, $preparation: String!) {
+  mutation(
+    $name: String!
+    $ingredients: String!
+    $glass: String!
+    $garnish: String
+    $category: String
+    $preparation: String!
+  ) {
     createCocktail(
       data: {
         status: PUBLISHED
